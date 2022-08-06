@@ -6,7 +6,7 @@ RUN mkdir -p /home/node/app
 WORKDIR '/app'
 
 COPY --chown=node:node ./package.json ./
-RUN sudo npm install
+RUN sudo npm install -g --unsafe-perm=true --allow-root
 COPY --chown=node:node ./ ./
 
 CMD ["npm","run","start"]
